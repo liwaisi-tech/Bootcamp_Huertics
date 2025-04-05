@@ -21,7 +21,7 @@ void app_main(void)
         // Apagar el LED
         ESP_LOGI(TAG, "Led apagado");
         gpio_set_level(BLINK_GPIO, 0);
-        vTaskDelay(10000 / portTICK_PERIOD_MS);  // Espera 5 segundo
+        vTaskDelay(5000 / portTICK_PERIOD_MS);  // Espera 5 segundo
 
     }
 }
