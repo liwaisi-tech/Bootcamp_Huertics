@@ -12,5 +12,10 @@ void app_main(void)
     cfg.channel = CHANNEL1;
     cfg.sensor_type = TYPE_CAP;
     moisture_sensor_init(&cfg); 
-    
+    while (1)
+    {
+        sensor_read_percentage(cfg.channel,&humedad,cfg.sensor_type);
+        ESP_LOGI(TAG, "Humedad: %d%%",humedad);
+        vTaskDelay(pdMS_TO_TICKS(5000));
+    } 
 }
